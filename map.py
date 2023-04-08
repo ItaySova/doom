@@ -21,4 +21,8 @@ class Map:
         self.get_map()
 
     def get_map(self):
-        pass
+        for j, row in enumerate(self.mini_map):
+            for i, value in enumerate(row):
+                if value:
+                    self.world_map[(i, j)] = value
+    
