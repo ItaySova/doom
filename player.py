@@ -10,3 +10,15 @@ class Player:
 
     def movement(self):
         pass
+
+    def update(self):
+        self.movement()
+
+    @property
+    def pos(self):
+        return self.x, self.y
+
+    @property
+    def map_pos(self):
+        return int(self.x), int(self.y)
+    
