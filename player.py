@@ -21,4 +21,3 @@ class Player:
     @property
     def map_pos(self):
         return int(self.x), int(self.y)
-    
