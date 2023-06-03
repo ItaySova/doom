@@ -1,7 +1,5 @@
 import pygame as pg
 import sys
-
-import map
 from settings import *
 from map import *
 from player import *
