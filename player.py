@@ -39,8 +39,11 @@ class Player:
             self.angle += PLAYER_ROT_SPEED * self.game.delta_time
         self.angle %= math.tau
 
-    def checkWalls(self, x, y):
+    def check_walls(self, x, y):
         return (x, y) not in self.game.map.world_map
+
+    def check_wall_collision(self, dx, dy):
+        pass
 
     def draw(self):
         pg.draw.line(self.game.screen, 'yellow', (self.x * 100, self.y * 100),
