@@ -10,4 +10,4 @@ class RayCasting:
         pass
 
     def update(self):
-        pass
+        self.ray_cast()
