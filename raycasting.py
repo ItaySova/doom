@@ -16,6 +16,21 @@ class RayCasting:
             cos_a = math.cos(ray_angle)
 
             # intersection with horizontals
+            y_hor, dy = (y_map + 1, 1) if sin_a > 0 else (y_map - 1e-6, -1)
+
+            depth_hor = (y_hor - oy) / sin_a
+            x_hor = ox + depth_hor * cos_a
+
+            delta_depth = dy / sin_a
+            dx = delta_depth * cos_a
+
+            for i in range(MAX_DEPTH):
+                tile_hor = int(x_hor), int(y_hor)
+                if tile_hor in self.game.map.world_map:
+                    break
+                x_hor += dx
+                y_hor += dy
+                depth_hor += delta_depth
 
             # intersection with verticals
             x_vert, dx = (x_map + 1, 1) if cos_a > 0 else (x_map - 1e-6, -1)
@@ -33,6 +48,16 @@ class RayCasting:
                 x_vert += dx
                 y_vert += dy
                 depth_vert += delta_depth
+
+            # depth
+            if depth_vert < depth_hor:
+                depth = depth_vert
+            else:
+                depth = depth_hor
+
+            # draw for debug:
+            pg.draw.line(self.game.screen, 'yellow', (100 * ox, 100 * oy),
+                         (100 * ox + 100 * depth * cos_a, 100 * oy + 100 * depth * sin_a), 2)
 
             ray_angle += DELTA_ANGLE
 
