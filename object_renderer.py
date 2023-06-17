@@ -7,6 +7,9 @@ class ObjectRenderer:
         self.screen = game.screen
         self.textures = self.load_wall_textures()
 
+    def render_game_objects(self):
+        pass
+    
     @staticmethod
     def get_texture(path, res=(TEXTURE_SIZE,TEXTURE_SIZE)):
         texture = pg.image.load(path).convert_alpha()
