@@ -2,12 +2,16 @@ import pygame as pg
 import math
 from settings import *
 
+
 class RayCasting:
     def __init__(self, game):
         self.game = game
         self.ray_casting_result = []
         self.objects_to_render = []
         self.textures = self.game.object_renderer.walls_texture
+
+    def get_objects_to_render(self):
+        pass
 
     def ray_cast(self):
         self.ray_casting_result = []
