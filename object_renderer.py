@@ -8,7 +8,9 @@ class ObjectRenderer:
         self.walls_textures = self.load_wall_textures()
 
     def render_game_objects(self):
-        pass
+        list_objects = self.game.raycasting.objects_to_render
+        for depth, image, pos in list_objects:
+            self.screen.blit(image, pos)
 
     @staticmethod
     def get_texture(path, res=(TEXTURE_SIZE,TEXTURE_SIZE)):
