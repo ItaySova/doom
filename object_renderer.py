@@ -6,9 +6,14 @@ class ObjectRenderer:
         self.game = game
         self.screen = game.screen
         self.walls_textures = self.load_wall_textures()
+        self.sky = self.get_texture("resources/textures/sky.png", (WIDTH, HALF_HEIGHT))
+        self.sky_offset = 0
 
     def draw(self):
         self.render_game_objects()
+
+    def draw_background(self):
+        pass
 
     def render_game_objects(self):
         list_objects = self.game.raycasting.objects_to_render
