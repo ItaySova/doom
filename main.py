@@ -29,9 +29,9 @@ class Game:
 
     def draw(self):
         self.screen.fill('black')
-        self.object_renderer.draw()
-        # self.map.draw()
-        # self.player.draw()
+        self.object_renderer.draw() # remove for 2d view
+        # self.map.draw() - for 2d view
+        # self.player.draw() - for 2d view
 
     def check_events(self):
         for event in pg.event.get():
