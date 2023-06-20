@@ -8,4 +8,10 @@ class SpriteObject:
         self.x, self.y = pos
         self.image = pg.image.load(path).convert_alpha()
         self.IMAGE_WIDTH = self.image.get_width()
-        self.IMAGE_HALF_WIDTH =  self.image.get_width() // 2
+        self.IMAGE_HALF_WIDTH = self.image.get_width() // 2
+
+    def get_sprite(self):
+        pass
+
+    def update(self):
+        self.get_sprite()
