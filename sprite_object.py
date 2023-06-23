@@ -63,7 +63,9 @@ class AnimatedSprite(SpriteObject):
         self.animation_trigger = False
 
     def animate(self, images):
-        pass
+        if self.animation_trigger:
+            images.rotate(-1)
+            self.image = images[0]
 
     def check_animation_time(self):
         self.animation_trigger = False
