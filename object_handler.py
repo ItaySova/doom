@@ -14,7 +14,7 @@ class ObjectHandler:
         add_sprite(AnimatedSprite(game))
 
     def update(self):
-        pass
+        [sprite.update() for sprite in self.sprite_list]
 
     def add_sprite(self, sprite):
         self.sprite_list.append(sprite)
