@@ -59,6 +59,11 @@ class AnimatedSprite(SpriteObject):
         self.animation_time = animation_time
         self.path = path.rsplit('/', 1)[0]
         self.images = self.get_images(self.path)
+        self.animation_time_prev = pg.time.get_ticks()
+        self.animation_trigger = False
+
+    def check_animation_time(self):
+        pass
 
     def get_images(self, path):
         images = deque()
