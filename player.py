@@ -9,8 +9,10 @@ class Player:
         self.angle = PLAYER_ANGLE
         self.shot = False
 
-    def single_fire_event(self):
-        pass
+    def single_fire_event(self, event):
+        if event == pg.MOUSEBUTTONDOWN:
+            if event.button == 1 and not self.shot:
+                self.shot = True
 
     def movement(self):
         sin_a = math.sin(self.angle)
