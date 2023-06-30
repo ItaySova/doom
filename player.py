@@ -10,9 +10,10 @@ class Player:
         self.shot = False
 
     def single_fire_event(self, event):
-        if event == pg.MOUSEBUTTONDOWN:
-            if event.button == 1 and not self.shot:
+        if event.type == pg.MOUSEBUTTONDOWN:
+            if event.button == 1 and not self.shot and not self.game.weapon.reloading:
                 self.shot = True
+                self.game.weapon.reloading = True
 
     def movement(self):
         sin_a = math.sin(self.angle)
