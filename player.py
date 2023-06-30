@@ -7,6 +7,10 @@ class Player:
         self.game = game
         self.x, self.y = PLAYER_POS
         self.angle = PLAYER_ANGLE
+        self.shot = False
+
+    def single_fire_event(self):
+        pass
 
     def movement(self):
         sin_a = math.sin(self.angle)
