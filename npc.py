@@ -24,3 +24,11 @@ class NPC(AnimatedSprite):
     def update(self):
         self.check_animation_time()
         self.get_sprite()
+        self.run_logic()
+
+    def check_hit_in_npc(self):
+        pass
+
+    def run_logic(self):
+        if self.alive:
+            self.animate(self.idle_images)
