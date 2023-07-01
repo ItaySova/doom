@@ -41,11 +41,11 @@ class Game:
         pg.display.set_caption(f'{self.clock.get_fps() :.1f}')
 
     def draw(self):
-        # self.screen.fill('black')
-        self.object_renderer.draw() # remove for 2d view
-        self.weapon.draw()
-        # self.map.draw()  # - for 2d view
-        # self.player.draw() # - for 2d view
+        self.screen.fill('black')
+        # self.object_renderer.draw() # remove for 2d view
+        # self.weapon.draw()
+        self.map.draw()  # - for 2d view
+        self.player.draw() # - for 2d view
 
     def check_events(self):
         self.global_trigger = False
