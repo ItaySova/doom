@@ -22,12 +22,13 @@ class NPC(AnimatedSprite):
         self.pain = False
         self.ray_cast_value = False
         self.frame_counter = 0
+        self.player_search_trigger = False
 
     def update(self):
         self.check_animation_time()
         self.get_sprite()
         self.run_logic()
-        # self.draw_ray_cast()
+        self.draw_ray_cast()
 
     def animate_pain(self):
         self.animate(self.pain_images)
@@ -80,9 +81,14 @@ class NPC(AnimatedSprite):
                 self.animate_pain()
 
             elif self.ray_cast_value:
+                self.player_search_trigger = True
                 self.animate(self.walk_images)
                 self.movement()
-                
+
+            elif self.player_search_trigger:
+                self.animate(self.walk_images)
+                self.movement()
+
             else:
                 self.animate(self.idle_images)
         else:
