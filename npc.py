@@ -34,6 +34,9 @@ class NPC(AnimatedSprite):
         if self.animation_trigger:
             self.pain = False
 
+    def movement(self):
+        pass
+
     def animate_death(self):
         if not self.alive:
             if self.game.global_trigger and self.frame_counter < len(self.death_images) - 1:
