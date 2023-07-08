@@ -12,12 +12,17 @@ class Player:
         self.rel = 0
 
     def check_game_over(self):
-        pass
+        if self.health < 0:
+            self.game.object_renderer.game_over()
+            pg.display.flip()
+            pg.time.delay(1500)
+            self.game.new_game()
 
     def get_damage(self, damage):
         self.game.player.health -= damage
         self.game.object_renderer.player_damage()
         self.game.sound.player_pain.play()
+        self.game.player.check_game_over()
 
     def single_fire_event(self, event):
         if event.type == pg.MOUSEBUTTONDOWN:
