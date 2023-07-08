@@ -21,7 +21,7 @@ class ObjectRenderer:
         self.draw_player_health()
 
     def game_over(self):
-        pass
+        self.screen.blit(self.game_over_image, (0, 0))
 
     def draw_player_health(self):
         health = str(self.game.player.health)
