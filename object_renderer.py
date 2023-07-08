@@ -15,7 +15,7 @@ class ObjectRenderer:
         self.render_game_objects()
 
     def player_damage(self):
-        pass
+        self.screen.blit(self.blood_screen, (0, 0))
 
     def draw_background(self):
         self.sky_offset = (self.sky_offset + 4 * self.game.player.rel) % WIDTH
